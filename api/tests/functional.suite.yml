@@ -1,0 +1,21 @@
+suite_namespace: api\tests\functional
+actor: FunctionalTester
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+modules:
+    enabled:
+        - Yii2
+        - Filesystem
+        - REST:
+              depends: PhpBrowser
+              url: http://localhost
+    config:
+        Yii2:
+          configFile: 'config/test.php'
